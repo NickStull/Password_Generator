@@ -54,7 +54,7 @@ function genPass(length) {
           password += specChar.charAt(Math.floor(Math.random() * specChar.length))
       }
       else if (passLower === false && passUpper === false && passNum === false && passSpec === false) {
-        alert("How on Earth am I supposed to generat a password without lowercase letters, uppercase letters, numbers, or special characters???")
+        alert("How on Earth am I supposed to generate a password without lowercase letters, uppercase letters, numbers, or special characters???")
         window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", '_blank');
         break
       }
