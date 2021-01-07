@@ -13,4 +13,6 @@ Published website: (https://nickstull.github.io/Password_Generator/)
 
 ## Screenshots:
 
+<img src="https://github.com/NickStull/Password_Generator/blob/main/Assets/screenshots/before_generating_password.png" width=50% height=50%>
 
+<img src="https://github.com/NickStull/Password_Generator/blob/main/Assets/screenshots/after_generating_password.png" width=50% height=50%>
