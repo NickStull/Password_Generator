@@ -6,10 +6,21 @@ var passUpper = true;
 var passNum = true;
 var passSpec = true;
 
+generateBtn.addEventListener("click", writePassword);
+
+function writePassword() {
+  passLength = 0
+  var pwdOutput = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = pwdOutput;
+
+}
+
 function generatePassword() {
-  while (passLength < 8 || passLength > 128) {
+  while (passLength < 8 || passLength > 128 || isNaN(passLength)) {
     passLength = prompt("How long would you like your password to be?\nMUST BE BETWEEN 8 - 128.");
-    if (passLength < 8 || passLength > 128) {
+    if (passLength < 8 || passLength > 128 || isNaN(passLength)) {
       alert("Unexpected Entry. Please enter a number between 8 - 128.");
     }
     console.log(passLength);
@@ -23,21 +34,12 @@ function generatePassword() {
   return genPass(passLength);
 }
 
-function writePassword() {
-  passLength = 0
-  var pwdOutput = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = pwdOutput;
-
-}
-
 function genPass(length) {
   var password = "";
   var lowerCase = "abcdefghijklmnopqrstuvwxyz";
   var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var numeric = "0123456789";
-  var specChar = "!#$%&'()*+,-./:;<=>?@[]^_`{}~";
+  var specChar = "!@#$%^&*";
   while (password.length < length) {
       var randOption = Math.floor(Math.random() * 4) + 1;
       console.log(randOption)
@@ -62,45 +64,3 @@ function genPass(length) {
   console.log(password)
   return password;
 }
-
-// function genPass(length) {
-//   var password = "";
-//   var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-//   var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//   var numeric = "0123456789";
-//   var specChar = "!#$%&'()*+,-./:;<=>?@[]^_`{}~";
-//   for (i = 0; i < length; i++) {
-//       var randOption = Math.floor(Math.random() * 4) + 1;
-//       console.log(randOption)
-//       if (randOption === 1) {
-//           password += lowerCase.charAt(Math.floor(Math.random() * lowerCase.length));
-//       }
-//       else if (randOption === 2) {
-//           password += upperCase.charAt(Math.floor(Math.random() * upperCase.length));
-//       }
-//       else if (randOption === 3) {
-//           password += numeric.charAt(Math.floor(Math.random() * numeric.length))
-//       }
-//       else if (randOption === 4) {
-//           password += specChar.charAt(Math.floor(Math.random() * specChar.length))
-//       }
-//   }
-//   console.log(password)
-//   return password;
-// }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-// Prompt for password length
-//      Password must be 8-128 characters
-// Prompt for character types
-//      Choises are lowercase, uppercase, numeric, and/or special characters
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
